@@ -123,7 +123,12 @@ class QueryTranslator:
         
         # Combine all parts
         final_query = ' '.join(query_parts)
-        
+
+        # Fallback to the raw request if translation produced no operators
+        if not final_query.strip():
+            final_query = request
+            operator_breakdown['raw_request'] = request
+
         return SearchQuery(
             query=final_query,
             purpose=self._generate_purpose(request),

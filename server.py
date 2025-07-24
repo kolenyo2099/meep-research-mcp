@@ -64,7 +64,18 @@ async def search_with_operators(
     enhanced_query = build_advanced_query(query, search_type)
     
     # Validate and convert query for Google Custom Search
-    google_query = validate_and_convert_query(enhanced_query)
+    try:
+        google_query = validate_and_convert_query(enhanced_query)
+    except ValueError as ve:
+        logger.error(f"Invalid search query: {ve}")
+        return {
+            "results": [],
+            "enhanced_query": enhanced_query,
+            "converted_query": None,
+            "engine": "google_custom_search",
+            "error": str(ve),
+            "api_status": get_api_status(),
+        }
     
     try:
         # Perform search using Google Custom Search (uses max_results from config)

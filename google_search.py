@@ -2,16 +2,19 @@
 Google Custom Search API implementation for Meep Research MCP
 """
 
-import aiohttp
-import asyncio
 import logging
+try:
+    import aiohttp
+except ImportError as e:
+    aiohttp = None
+    logging.error("aiohttp package is required for Google Custom Search")
+    raise
+import asyncio
 from typing import Dict, List, Any, Optional
 from urllib.parse import quote_plus
 import time
 import json
 from datetime import datetime, timedelta
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
 try:
     from .config import get_config, ConfigError
