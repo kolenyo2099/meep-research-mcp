@@ -182,42 +182,6 @@ cd meep-research-mcp
 # Install the package and dependencies
 pip install -e .
 ```
-
-#### Using pip (coming soon)
-
-```bash
-pip install meep-research-mcp
-```
-
-### OpenSERP Integration
-
-This MCP server requires the enhanced version of OpenSERP to properly handle advanced OSINT search operators.
-
-#### Setting up Enhanced OpenSERP
-
-1. Clone the enhanced OpenSERP repository:
-```bash
-git clone https://github.com/kolenyo2099/openserp.git
-cd openserp
-```
-
-2. Run the enhanced OpenSERP:
-```bash
-go run main.go serve -a localhost -p 7000
-```
-   
-   Alternatively, if you have Go installed:
-```bash
-go build
-./openserp serve -a localhost -p 7000
-```
-
-3. Configure the MCP server to use your OpenSERP instance:
-```bash
-# Set environment variable before running the MCP server
-export OPENSERP_URL=http://localhost:7000
-```
-
 ### Dependencies
 
 The following dependencies will be installed automatically:
@@ -572,9 +536,3 @@ I've found John Smith's LinkedIn profile showing his employment history, several
 
 MIT
 
-## Acknowledgements
-
-- [Anthropic](https://www.anthropic.com/) for the Model Context Protocol
-- [OpenSERP](https://github.com/karust/openserp) for the base search results API
-- [Enhanced OpenSERP](https://github.com/kolenyo2099/openserp) for advanced OSINT operator support
-- [Claude Desktop](https://claude.ai/desktop) for AI assistant integration 
