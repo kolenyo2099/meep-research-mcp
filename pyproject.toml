@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meep-research-mcp"
+version = "0.1.0"
+description = "Meep Research MCP"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "mcp",
+    "asyncio",
+    "aiohttp",
+    "requests",
+    "duckduckgo-search",
+    "google-api-python-client>=2.172.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["meep_research_mcp*"]
+exclude = ["openserp*"]
+
+[project.scripts]
+meep-research-mcp = "meep_research_mcp.__main__:main"

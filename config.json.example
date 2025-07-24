@@ -1,0 +1,14 @@
+{
+  "google_custom_search": {
+    "api_key": "your-google-custom-search-api-key-here",
+    "cse_id": "your-custom-search-engine-id-here"
+  },
+  "rate_limits": {
+    "max_requests_per_day": 100,
+    "max_requests_per_minute": 10
+  },
+  "search_defaults": {
+    "max_results": 10,
+    "timeout_seconds": 30
+  }
+} 

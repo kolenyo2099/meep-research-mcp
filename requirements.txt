@@ -1,0 +1,14 @@
+# Core MCP dependencies
+fastmcp
+asyncio
+aiohttp
+logging
+
+# Google Custom Search API (replaces DuckDuckGo)
+# No additional packages needed - using aiohttp for HTTP requests
+
+# Google API Python client library
+google-api-python-client
+
+# Existing dependencies for search strategies
+datetime 
